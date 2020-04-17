@@ -63,6 +63,8 @@ exports.hotelDetail = async (req, res, next) => {
 exports.listAllCountries = async (req, res, next) => {
     try {
         const allCountries = await Hotel.distinct('country');
+        // const allCountries_lowercase = allCountries.toLowerCase();
+        
         res.render('all_countries', { title: 'Browse by country', allCountries});
 
     } catch(error) {
